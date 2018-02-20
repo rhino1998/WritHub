@@ -6,6 +6,7 @@ import (
 	"image/color"
 	"log"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/rhino1998/writhub/tiny"
@@ -37,7 +38,7 @@ func main() {
 	img := image.NewAlpha(image.Rect(0, 0, 42, 7))
 	width, height := img.Rect.Dx(), img.Rect.Dy()
 
-	tiny.Font.DrawString(img, 0, 1, os.Args[3], color.Black)
+	tiny.Font.DrawString(img, 0, 1, strings.ToUpper(os.Args[3]), color.Black)
 
 	for x := 0; x < width; x++ {
 		for y := 0; y < height; y++ {
